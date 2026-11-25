@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#000000">
+<title>Dancing Fruit Pop</title>
+<style>
+html,body{margin:0;padding:0;width:100%;height:100%;background:#000;overflow:hidden;touch-action:none;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
+canvas{display:block;position:fixed;left:0;top:0;touch-action:none;cursor:pointer}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script>
+'use strict';
+(function(){
+const cv = document.getElementById('c');
+const ctx = cv.getContext('2d');
+const TAU = Math.PI * 2;
+const rand = (a, b) => a + Math.random() * (b - a);
+const randi = (a, b) => Math.floor(rand(a, b + 1));
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const elasticOut = x => x <= 0 ? 0 : x >= 1 ? 1 : Math.pow(2, -10 * x) * Math.sin((x * 10 - 0.75) * (TAU / 3)) + 1;
+const easeInOut = x => x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+
+let W = 0, H = 0, DPR = 1, unit = 60, floorTop = 0, floorH = 0, maxFruit = 10, K = 0;
+let t = 0, lastNow = 0, beat = 0, shake = 0;
+let pointer = null;
+const fruits = [], particles = [], effects = [], messPieces = [], messSplats = [], pending = [];
+const MAXP = 520, MAX_MESS_P = 260, MAX_MESS_S = 170, MESS_LIFE = 60;
+// Track: 'Electrodoodle' by Kevin MacLeod (incompetech.com), CC BY 4.0 - 120 BPM
+let SPB = 0.5, BPM = 120, STEP = SPB / 4;

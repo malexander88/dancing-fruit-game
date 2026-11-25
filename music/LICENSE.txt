@@ -1,0 +1,26 @@
+Music used in Dancing Fruit (current)
+=====================================
+
+Track:   "Electrodoodle"
+Artist:  Kevin MacLeod (incompetech.com)
+Source:  https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200079
+         https://incompetech.com/wordpress/2012/07/electrodoodle/
+         (mp3: https://incompetech.com/music/royalty-free/mp3-royaltyfree/Electrodoodle.mp3)
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+         https://creativecommons.org/licenses/by/4.0/
+Attribution (shown faintly in the top-right corner of the game):
+  "Electrodoodle" Kevin MacLeod (incompetech.com)
+  Licensed under Creative Commons: By Attribution 4.0 License
+  http://creativecommons.org/licenses/by/4.0/
+
+Embedded file: electrodoodle-kevin-macleod-ccby4.mp3
+  Source 0.02 s .. 164.02 s (82 bars at exactly 120 BPM, starting on a downbeat),
+  followed by its first 1.0 s again as a wrap-around tail so the Web Audio loop
+  window (0.5 s .. 164.5 s) repeats seamlessly. Re-encoded with ffmpeg at 112 kbps stereo.
+  Modification: trimmed the final ~1.5 s ending hit and looped.
+
+Previous track (kept for reference, CC0, no attribution required):
+  melodic-edm-loops-fupi-cc0.mp3 - "Melodic EDM Loops" by Fupi
+  https://opengameart.org/content/melodic-edm-loops - CC0 1.0
+
+Other candidates and their licences: see candidates/SOURCES.txt
